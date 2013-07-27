@@ -1,0 +1,70 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="MixTube.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+	<phone:PhoneApplicationPage.Resources>
+		<FontFamily x:Key="FontFamily-Sketch">./Fonts/BuxtonSketch.ttf#Buxton Sketch</FontFamily>
+		<Color x:Key="ForegroundColor">#FF606060</Color>
+		<SolidColorBrush x:Key="BaseForeground-Sketch" Color="{StaticResource ForegroundColor}"/>
+	<!-- Basic Sketch TextBlock -->
+		<Style x:Key="BasicTextBlock-Sketch" TargetType="TextBlock" d:StyleDefaultContent="Basic Text">
+			<Setter Property="FontFamily" Value="{StaticResource FontFamily-Sketch}"/>
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="Foreground" Value="{StaticResource BaseForeground-Sketch}"/>
+		</Style>
+	
+	</phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#00000A0A">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.377*"/>
+    		<ColumnDefinition Width="0.127*"/>
+    		<ColumnDefinition Width="0.129*"/>
+    		<ColumnDefinition Width="0.079*"/>
+    		<ColumnDefinition Width="0.088*"/>
+    		<ColumnDefinition Width="0.2*"/>
+    	</Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="147"/>
+            <RowDefinition Height="621*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,29,12,0" Grid.ColumnSpan="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228*" />
+                <ColumnDefinition Width="228*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Top40Btn" Grid.ColumnSpan="2" Content="View Top 40" Height="105" Margin="15,92,13,0" VerticalAlignment="Top" FontSize="32" FontFamily="Comic Sans MS" Click="Top40Btn_Click" />
+        	<Button x:Name="No1SingleBtn" Grid.ColumnSpan="2" Content="View No 1 Single" Margin="15,232,13,255" FontSize="32" FontFamily="Comic Sans MS" Click="No1SingleBtn_Click" />
+        	<Button x:Name="RandomSingleBtn" Grid.ColumnSpan="2" Content="View Random Single" Height="105" Margin="15,0,13,117" VerticalAlignment="Bottom" FontSize="32" FontFamily="Comic Sans MS" Click="RandomSingleBtn_Click" />
+        </Grid>
+        <TextBlock Grid.ColumnSpan="4" Height="30" Margin="43,96,9,0" Grid.Row="1" TextWrapping="Wrap" Text="Please select your option below:" VerticalAlignment="Top"/>
+        <TextBlock Margin="-73,6,13,49" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="MixTube" FontSize="64" Foreground="#FFF90A0A" FontFamily="Comic Sans MS" Grid.ColumnSpan="4" Grid.Column="1" d:LayoutOverrides="Width"/>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
